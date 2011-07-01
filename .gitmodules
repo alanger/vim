@@ -1,3 +1,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "snipmate.vim"]
+	path = snipmate.vim
+	url = https://github.com/msanders/snipmate.vim.git
