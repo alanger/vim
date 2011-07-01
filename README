@@ -1,0 +1,30 @@
+Installation:
+	
+	git clone git://github.com/alanger/vim.git 
+
+Create symlinks:
+
+	ln -s ~/.vim/vimrc ~/.vimrc
+	ln -s ~/.vim/gvim ~/.gvimrc
+
+Installing submodules
+
+	git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+	git add .
+	git commit -m "Install Fugitive.vim bundle as a submodule."
+
+Installing the VIM environment on another machine
+	cd ~
+	git clone https://alanger@github.com/alanger/vim.git ~/.vim
+	ln -s ~/.vim/vimrc ~/.vimrc
+	ln -s ~/.vim/gvimrc ~/.gvimrc
+	cd ~/.vim
+	git submodule init
+	git submodule update
+
+Upgrading a plugin bundle
+	cd ~/.vim/bundle/snipmate
+	git pull origin master
+
+Upgrading all bundled plugins
+	git submodule foreach git pull origin master
