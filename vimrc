@@ -62,11 +62,18 @@ set textwidth=120
 " get rid of the silly characters in window separators
 set fillchars=""
 
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd! bufwritepost .vimrc source $MYVIMRC
+endif
+
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
 set diffopt=vertical
 set tabstop=4
 set shiftwidth=4
+
+let mapleader = ","
 
 " Maps Ctrl-UP,DOWN,LEFT,RIGHT to change the selected window
 noremap <C-up> <C-W>j
@@ -92,13 +99,13 @@ map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Key Mappings for the Tabs
-map ,tn :tabnew<CR>
-map ,tc :tabclose<CR>
-map ,th :tabprevious<CR>
-map ,tl :tabnext<CR>
+map <leader>tn :tabnew<CR>
+map <leader>tc :tabclose<CR>
+map <leader>th :tabprevious<CR>
+map <leader>tl :tabnext<CR>
 
 " Mapping for jumping to the taglist
-map ,l :TlistOpen<CR>
+map <leader>l :TlistOpen<CR>
 
 " Key Mapping for Search
 nmap <C-h> <Esc>:noh<Return><Esc> 
@@ -115,5 +122,5 @@ imap <F2> <Esc>:w<CR>a
 inoremap <C-e> <Esc>$ 
 noremap <C-e> <Esc>$
 
-
-
+" Open vimrc in a new tab for editing
+nmap <leader>v :tabedit $MYVIMRC<CR>
