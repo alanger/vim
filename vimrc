@@ -124,3 +124,8 @@ noremap <C-e> <Esc>$
 
 " Open vimrc in a new tab for editing
 nmap <leader>v :tabedit $MYVIMRC<CR>
+
+map <C-j> 10j
+map <C-k> 10k
+map <C-h> 10h
+map <C-l> 10l
